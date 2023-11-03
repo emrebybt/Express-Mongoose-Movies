@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+  include includes/head.pug
+  body
+    include includes/header.pug 
+    .row 
+      .col-md-3 
+        block menu 
+          include includes/menu.pug
+      .col-md-9
+        block content
+
+    include includes/scripts.pug

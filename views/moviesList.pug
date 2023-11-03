@@ -1,0 +1,20 @@
+extends layout 
+
+block content
+    h1 Movies List
+    table.table.table-striped
+        thead 
+            tr 
+                th Film Adı
+                th Yönetmen 
+                th Oyuncular 
+                th
+        tbody
+            each film in movies 
+                tr 
+                    td #{film.filmadi}
+                    td #{film.yonetmen}
+                    td #{film.oyuncular}
+                    td 
+                        a.btn.btn-primary.mx-1(href="/movies/edit/" + film._id) Edit 
+                        a.btn.btn-primary(href="/movies/delete/" + film._id) Delete 

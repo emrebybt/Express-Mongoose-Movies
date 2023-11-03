@@ -1,0 +1,5 @@
+h1.text-center Kategoriler 
+.list-group.p-3.pt-0
+    a.list-group-item.active(href="/movies") Tüm Filmler
+    each tur in locals.Genres
+        a.list-group-item(href="/movies/byGenre/" + tur._id) #{tur.turAdi}

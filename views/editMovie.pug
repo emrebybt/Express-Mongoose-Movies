@@ -1,0 +1,28 @@
+extends layout
+block content
+    h2 Film Güncelle
+    .col-md-4
+        form(action='/movies/edit' method='post')
+            input(type='hidden' name='id' value=film._id)
+            .form-group
+            label.control-label Film Adı
+            input.form-control(name='filmadi' value=film.filmadi)
+            .form-group
+            label.control-label Yönetmen
+            input.form-control(name='yonetmen' value=film.yonetmen)
+            .form-group
+            label.control-label Oyuncular
+            input.form-control(name='oyuncular' value=film.oyuncular)
+            .form-group
+            label.control-label Resim
+            input.form-control(name='imageUrl' value=film.imageUrl)
+            .form-group
+            label.control-label Film Türü
+            select.form-select(name='genreId')
+                each tur in genres
+                    if tur._id.toString() === film.turId.toString()
+                        option(value=tur._id selected) #{tur.turAdi}
+                    else 
+                        option(value=tur._id) #{tur.turAdi}
+            .form-group
+            input.btn.btn-primary.mt-3(type='submit' value='Save')

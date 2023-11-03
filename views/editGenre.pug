@@ -1,0 +1,14 @@
+extends layout
+block content
+    h2 Tür Güncelle
+    .col-md-4
+        form(action='/genres/edit' method='post')
+            input(type='hidden' name='id' value=tur._id)
+            .form-group
+            label.control-label Tür Adı
+            input.form-control(name='turAdi' value=tur.turAdi)
+            .form-group
+            label.control-label aciklama
+            input.form-control(name='aciklama' value=tur.aciklama)
+            .form-group
+            input.btn.btn-primary.mt-3(type='submit' value='Save')

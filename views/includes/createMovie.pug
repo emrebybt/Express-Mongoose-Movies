@@ -1,0 +1,11 @@
+mixin createMovie(film)
+    .col-md-4
+        .card.mb-3     
+            .card-header.text-center
+                h4.card-title #{film.filmadi}
+                img.card-img-top(src=`/images/${film.imageUrl}` alt=`${film.filmadi}` width="200px")
+            .card-body.text-center
+                p.card-text Yönetmen : #{film.yonetmen}
+                p.card-text Oyuncular : #{film.oyuncular}
+            .card-footer.text-end
+                a.btn.btn-primary(href='/movies/detail/'+film._id) film detay

@@ -1,0 +1,25 @@
+extends layout
+block content
+    h2 Film Ekle
+    .col-md-4
+        form(action='addMovie' method='post')
+            .form-group
+            label.control-label Film Adı
+            input.form-control(name='filmadi')
+            .form-group
+            label.control-label Yönetmen
+            input.form-control(name='yonetmen')
+            .form-group
+            label.control-label Oyuncular
+            input.form-control(name='oyuncular')
+            .form-group
+            label.control-label Resim
+            input.form-control(name='imageUrl')
+            .form-group
+            label.control-label Film Türü
+            select.form-select(name='genreId')
+                option(selected) Tür seçiniz
+                each tur in genres
+                    option(value=tur._id) #{tur.turAdi}
+            .form-group
+            input.btn.btn-primary.mt-3(type='submit' value='Create')

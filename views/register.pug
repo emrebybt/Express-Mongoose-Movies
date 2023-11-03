@@ -1,0 +1,19 @@
+extends layout
+block content
+    h2 Kullanıcı Kayıt
+    .col-md-4
+        form(action='/users/register' method='post')
+            .form-group
+            label.control-label Adı
+            input.form-control(name='name')
+            .form-group
+            label.control-label Soyadı
+            input.form-control(name='surname')
+            .form-group
+            label.control-label Email
+            input.form-control(name='email')
+            .form-group
+            label.control-label Password
+            input.form-control(name='password' type="password")
+            .form-group
+            input.btn.btn-primary.mt-3(type='submit' value='Kaydet')

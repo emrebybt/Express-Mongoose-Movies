@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .col-md-4
+        .card.mt-3     
+            .card-header.text-center
+                h3.card-title #{film.filmadi}
+                img.card-img-top(src=`/images/${film.imageUrl}` alt=`${film.filmadi}` width="200px")
+            .card-body.text-center
+                p.card-text Oyuncular : #{film.oyuncular}
+                p.card-text Yonetmen : #{film.yonetmen}
+                p.card-text Film Türü : #{film.turId.turAdi}
+            .card-footer.text-end
+                

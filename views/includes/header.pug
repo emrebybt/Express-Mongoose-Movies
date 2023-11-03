@@ -1,0 +1,34 @@
+header
+  nav.navbar.navbar-expand-sm.navbar-toggleable-sm.navbar.bg-primary.border-bottom.box-shadow.mb-3
+    .container-fluid
+      a.navbar-brand.text-white(href="/") Movie Market
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='.navbar-collapse' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      .navbar-collapse.collapse.d-sm-inline-flex.justify-content-between
+        ul.navbar-nav.flex-grow-1
+          li.nav-item
+            a.nav-link.text-white(href="/movies") Anasayfa
+          if locals.isAuthenticated
+            li.nav-item
+              a.nav-link.text-white(href="/movies/list") Film Listesi
+            li.nav-item
+              a.nav-link.text-white(href="/movies/addMovie") Film Ekle
+            li.nav-item
+              a.nav-link.text-white(href="/genres/list") Film Türleri
+            li.nav-item
+              a.nav-link.text-white(href="/genres/addGenre") Film Tür Ekle
+            ul.navbar-nav.flex-grow-4.m-auto
+              li.nav-item
+                a.nav-link.text-white Hoşgeldiniz #{locals.user.name}
+              li.nav-item
+                a.nav-link.text-white(href="/users/logout") Çıkış Yap
+          else
+            ul.navbar-nav.flex-grow-4.m-auto
+              li.nav-item
+                a.nav-link.text-white(href="/users/login") Giriş Yap
+              li.nav-item
+                a.nav-link.text-white(href="/users/register") Kayıt Ol
+        form.d-flex(role='search' action="/movies/search" method='post')
+          input.form-control.me-2(name='search' type='search' placeholder='film giriniz' aria-label='Search')
+          button.btn.btn-outline-success(type='submit') Ara
+        

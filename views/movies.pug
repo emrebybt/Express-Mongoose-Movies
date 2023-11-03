@@ -1,0 +1,9 @@
+extends layout
+
+include includes/createMovie
+
+block content
+    h1 Movies List
+    .row        
+        each film in movies
+            +createMovie(film)
